@@ -23,29 +23,25 @@ public class Dialogue : MonoBehaviour
         choicesPanel.SetActive(false);
     }
 
-    // Update is called once per frame
-    void Update()
+    public void StartDialogue()
     {
-        if (Input.GetMouseButtonUp(0))
-        {
-            if (textComponent.text == lines[index])
-            {
-                NextLine();
-            }
-            else
-            {
-                StopAllCoroutines();
-                textComponent.text = lines[index];
-            }
-        }
-    }
-
-    void StartDialogue()
-    {
+        textComponent.text = string.Empty;
         index = 0;
+        choicesPanel.SetActive(false);
         StartCoroutine(TypeLine());
     }
-
+    public void ContinueDialogue()
+    {
+        if (textComponent.text == lines[index])
+        {
+            NextLine();
+        }
+        else
+        {
+            StopAllCoroutines();
+            textComponent.text = lines[index];
+        }
+    }
     void NextLine()
     {
         if (index < lines.Length - 1)
