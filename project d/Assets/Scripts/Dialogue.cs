@@ -19,7 +19,7 @@ public class Dialogue : MonoBehaviour
     {
         Instance = this;
         textComponent.text = string.Empty;
-        StartDialogue();
+        GameManager.Instance.Shore();
         choicesPanel.SetActive(false);
     }
 

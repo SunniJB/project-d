@@ -10,7 +10,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private Sprite[] portraits;
     [SerializeField] private GameObject mainPortrait, notepadPortrait;
 
-    public TextMeshProUGUI motiveText, meansText, opportunityText;
+    public TextMeshProUGUI motiveText, meansText, opportunityText, nameText;
 
     public static GameManager Instance;
     [SerializeField] private Suspect shore, wizard, throckmorton;
@@ -26,7 +26,7 @@ public class GameManager : MonoBehaviour
     public void Shore()
     {
         activeSupect = 0;
-        Debug.Log("Shore is now selected");
+        nameText.text = "Ms. Shore";
         dialogue.lines = shore.suspectIntroText;
         dialogue.StartDialogue();
     }
@@ -35,7 +35,7 @@ public class GameManager : MonoBehaviour
     {
         activeSupect = 1;
         dialogue.lines = wizard.suspectIntroText;
-        Debug.Log("Wizard is now selected");
+        nameText.text = "Mr Wizard";
         dialogue.StartDialogue();
     }
 
@@ -43,7 +43,7 @@ public class GameManager : MonoBehaviour
     {
         activeSupect = 2;
         dialogue.lines = throckmorton.suspectIntroText;
-        Debug.Log("Throckmorton is now selected");
+        nameText.text = "Mrs. Throckmorton";
         dialogue.StartDialogue();
     }
 
