@@ -14,7 +14,7 @@ public class GameManager : MonoBehaviour
 
     public static GameManager Instance;
     [SerializeField] private Suspect shore, wizard, throckmorton;
-    [SerializeField] Dialogue dialogue;
+    public Dialogue dialogue;
 
 
     private void Start()
@@ -51,5 +51,66 @@ public class GameManager : MonoBehaviour
     {
         mainPortrait.GetComponent<SpriteRenderer>().sprite = portraits[activeSupect]; 
         notepadPortrait.GetComponent<Image>().sprite = portraits[activeSupect];
+    }
+
+    public void WhoAreYou()
+    {
+        switch (activeSupect)
+        {
+            case 0:
+                dialogue.lines = shore.whoAreYou;
+                break;
+            case 1:
+                dialogue.lines = wizard.whoAreYou;
+                break;
+            case 2:
+                dialogue.lines = throckmorton.whoAreYou;
+                break;
+            default:
+                print("Error");
+                break;
+        }
+
+        dialogue.StartDialogue();
+    }
+
+    public void WhereWereYou()
+    {
+        switch (activeSupect)
+        {
+            case 0:
+                dialogue.lines = shore.whereWereYou;
+                break;
+            case 1:
+                dialogue.lines = wizard.whereWereYou;
+                break;
+            case 2:
+                dialogue.lines = throckmorton.whereWereYou;
+                break;
+            default:
+                print("Error");
+                break;
+        }
+        dialogue.StartDialogue();
+    }
+
+    public void HowDoYouKnowVic()
+    {
+        switch (activeSupect)
+        {
+            case 0:
+                dialogue.lines = shore.howDoYouKnowVic;
+                break;
+            case 1:
+                dialogue.lines = wizard.howDoYouKnowVic;
+                break;
+            case 2:
+                dialogue.lines = throckmorton.howDoYouKnowVic;
+                break;
+            default:
+                print("Error");
+                break;
+        }
+        dialogue.StartDialogue();
     }
 }

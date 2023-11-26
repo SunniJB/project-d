@@ -316,7 +316,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: What's up
+  m_text: How do you know the victim?
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -566,8 +566,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 129, y: 39}
-  m_SizeDelta: {x: 160, y: 30}
+  m_AnchoredPosition: {x: 30, y: 2.97}
+  m_SizeDelta: {x: 160, y: 85.88}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &86082098
 MonoBehaviour:
@@ -612,7 +612,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 86082099}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 194058021}
+        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+        m_MethodName: HowDoYouKnowVic
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &86082099
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1320,7 +1332,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Where were you?
+  m_text: Who are you?
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1347,7 +1359,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 20.3
+  m_fontSize: 37.85
   m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -1676,8 +1688,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -133, y: 39}
-  m_SizeDelta: {x: 160, y: 30}
+  m_AnchoredPosition: {x: -501, y: 2.97}
+  m_SizeDelta: {x: 160, y: 85.88}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &432225978
 MonoBehaviour:
@@ -1722,7 +1734,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 432225979}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 194058021}
+        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+        m_MethodName: WhoAreYou
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &432225979
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3407,7 +3431,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: What's your problem?
+  m_text: Where were you?
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -3434,7 +3458,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 18
+  m_fontSize: 34.8
   m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -3715,11 +3739,11 @@ MonoBehaviour:
   suspectIntroText:
   - Hello......
   whoAreYou:
-  - MMmmmmm yes I am his wife
-  whereWereYou:
-  - At home with the poolboy
+  - mmmm i am the wife
   howDoYouKnowVic:
   - I married him for money lol
+  whereWereYou:
+  - At home with the poolboy
 --- !u!114 &1290216130
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3738,11 +3762,11 @@ MonoBehaviour:
   suspectIntroText:
   - Greetings and salutations
   whoAreYou:
-  - I am the esteemed wizardfuck of high tower
-  whereWereYou:
-  - Why, I was in the observatorium observing the toriums
+  - the esteemed wizardbro of hightower
   howDoYouKnowVic:
   - I've never seen the haberdasher before
+  whereWereYou:
+  - Why, I was in the observatorium observing the toriums
 --- !u!114 &1290216131
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3761,12 +3785,12 @@ MonoBehaviour:
   suspectIntroText:
   - Hey!
   whoAreYou:
-  - I am Ms Shore
-  - I love the horrors of the deep so so so so much
-  whereWereYou:
-  - I was on a boat bitch
+  - I am a lighthouse keeper i love lighthouses and also the deep, ancient terrors
+    that slumber beneath
   howDoYouKnowVic:
-  - He sucked me off
+  - never seen the guy before lol
+  whereWereYou:
+  - I was on a boat because im a self made woman. wow feminism
 --- !u!4 &1290216132
 Transform:
   m_ObjectHideFlags: 0
@@ -4193,7 +4217,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1593041985
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4694,8 +4718,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 128.99998, y: -25}
-  m_SizeDelta: {x: 160, y: 30}
+  m_AnchoredPosition: {x: 290.99997, y: 2.97}
+  m_SizeDelta: {x: 160, y: 85.88}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1844161487
 MonoBehaviour:
@@ -4830,8 +4854,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -133, y: -25}
-  m_SizeDelta: {x: 160, y: 30}
+  m_AnchoredPosition: {x: -232, y: 2.97}
+  m_SizeDelta: {x: 160, y: 85.88}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1896194242
 MonoBehaviour:
@@ -4879,7 +4903,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 194058021}
         m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
-        m_MethodName: Wizard
+        m_MethodName: WhereWereYou
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
