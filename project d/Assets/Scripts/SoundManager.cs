@@ -14,9 +14,13 @@ public class SoundManager : MonoBehaviour
 
     [SerializeField] Slider volumeSlider;
 
-    private void Start()
+    private void Awake()
     {
         Instance = this;
+    }
+    private void Start()
+    {
+
         foreach (var clip in soundClips)
         {
             soundDictionary[clip.name] = clip;

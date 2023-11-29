@@ -17,10 +17,14 @@ public class GameManager : MonoBehaviour
     public Dialogue dialogue;
 
 
+    private void Awake()
+    {
+        Instance = this;
+    }
     private void Start()
     {
         motiveText.text = meansText.text = opportunityText.text = "";
-        Instance = this;
+
         dialogue.lines = shore.suspectIntroText;
     }
     public void Shore()
