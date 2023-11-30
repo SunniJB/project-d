@@ -13,14 +13,16 @@ public class Choice : MonoBehaviour
             Unavailable();
         }
     }
-    private void Update()
-    {
-
-    }
 
     public void Unavailable()
     {
         gameObject.GetComponent<Button>().interactable = false;
         gameObject.GetComponent<Image>().color = Color.gray;
+    }
+
+    public void Available()
+    {
+        gameObject.GetComponent<Button>().interactable = true;
+        gameObject.GetComponent<Image>().color = Color.white;
     }
 }

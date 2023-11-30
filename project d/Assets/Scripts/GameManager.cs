@@ -13,7 +13,7 @@ public class GameManager : MonoBehaviour
     public TextMeshProUGUI motiveText, meansText, opportunityText, nameText;
 
     public static GameManager Instance;
-    [SerializeField] private Suspect shore, wizard, throckmorton;
+    public Suspect shore, wizard, throckmorton;
     public Dialogue dialogue;
 
 
@@ -26,6 +26,7 @@ public class GameManager : MonoBehaviour
         motiveText.text = meansText.text = opportunityText.text = "";
 
         dialogue.lines = shore.suspectIntroText;
+        dialogue.passphrase = shore.secretPassphrase;
     }
     public void Shore()
     {
@@ -110,6 +111,26 @@ public class GameManager : MonoBehaviour
                 break;
             case 2:
                 dialogue.lines = throckmorton.howDoYouKnowVic;
+                break;
+            default:
+                print("Error");
+                break;
+        }
+        dialogue.StartDialogue();
+    }
+
+    public void UnlockableDialogue()
+    {
+        switch (activeSupect)
+        {
+            case 0:
+                dialogue.lines = shore.unlockableDialogue;
+                break;
+            case 1:
+                dialogue.lines = wizard.unlockableDialogue;
+                break;
+            case 2:
+                dialogue.lines = throckmorton.unlockableDialogue;
                 break;
             default:
                 print("Error");

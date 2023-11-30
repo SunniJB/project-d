@@ -9,9 +9,11 @@ public class Dialogue : MonoBehaviour
 
     public TextMeshProUGUI textComponent;
     public string[] lines;
+    [SerializeField] char[] forbiddenCharacters = { '<', '>', '/' };
     public float textSpeed;
 
     private int index;
+    public string passphrase;
 
     public GameObject choicesPanel;
     // Start is called before the first frame update
@@ -51,6 +53,14 @@ public class Dialogue : MonoBehaviour
             StartCoroutine (TypeLine());
         } else
         {
+            if (lines[index] == passphrase) //can use a secret passphrase like this to make stuff happen after completed dialogue
+            {
+                if (GameManager.Instance.activeSupect == 0)
+                {
+                    GameManager.Instance.shore.dialogueUnlocked = true;
+                    GameManager.Instance.shore.UnlockDialogue();
+                }
+            }
             choicesPanel.SetActive(true);
         }
     }
