@@ -120,9 +120,9 @@ Material:
     - _OutlineWidth: 0
     - _PerspectiveFilter: 0.875
     - _Reflectivity: 10
-    - _ScaleRatioA: 1
-    - _ScaleRatioB: 1
-    - _ScaleRatioC: 1
+    - _ScaleRatioA: 0.8333333
+    - _ScaleRatioB: 0.6770833
+    - _ScaleRatioC: 0.6770833
     - _ScaleX: 1
     - _ScaleY: 1
     - _ShaderFlags: 0
@@ -167,9 +167,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71c1514a6bd24e1e882cebbe1904ce04, type: 3}
   m_Name: JMH Typewriter-Thin SDF
   m_EditorClassIdentifier: 
-  hashCode: 0
+  hashCode: 1448212607
   material: {fileID: -1147098396176510254}
-  materialHashCode: 0
+  materialHashCode: -1181239425
   m_Version: 1.1.0
   m_SourceFontFileGUID: 0f53abbc63b8a7946b8adeab6b36e416
   m_SourceFontFile_EditorRef: {fileID: 12800000, guid: 0f53abbc63b8a7946b8adeab6b36e416, type: 3}
