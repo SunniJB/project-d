@@ -6,6 +6,9 @@ using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
+    public static bool gameIsPaused;
+    [SerializeField] GameObject pausePanel;
+
     public int activeSupect; //0 is shore, 1 is wizard, 2 is throckmorton
     [SerializeField] private Sprite[] portraits;
     [SerializeField] private GameObject mainPortrait, notepadPortrait;
@@ -27,6 +30,26 @@ public class GameManager : MonoBehaviour
 
         dialogue.lines = shore.suspectIntroText;
         dialogue.passphrase = shore.secretPassphrase;
+    }
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            gameIsPaused = !gameIsPaused;
+            PauseGame();
+        }
+    }
+    public void PauseGame()
+    {
+        if (gameIsPaused)
+        {
+            pausePanel.SetActive(true);
+        }
+        else
+        {
+            pausePanel.SetActive(false);
+        }
     }
     public void Shore()
     {
