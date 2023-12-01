@@ -2900,7 +2900,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 56aede2199c8f964c8141beb199b18a5, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.7
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -4011,18 +4011,53 @@ MonoBehaviour:
   means: 'None so far... '
   opportunity: 'None so far... '
   suspectIntroText:
-  - Hello......
+  - Yes?
   whoAreYou:
-  - mmmm i am the wife
+  - You already know that.
+  - Hm.
+  - Fine. I am Madame Cornelia Throckmorton, wife of the deceased.
+  - Widow now, I suppose.
   howDoYouKnowVic:
-  - I married him for money lol
+  - Other than being married to him, you mean?
+  - Thorton and I met at a banquet.
+  - I was at the age to be married, he was an acceptable option.
+  - This is how these things go.
+  - My family was rich, his family was rich. Then we both got richer together.
+  - I suppose his assets go to me now.
+  - Hoo, as they say, ray.
   whereWereYou:
-  - At home with the poolboy
-  unlockableDialogue: []
+  - At home.
+  - As your boys well know, considering they woke me up with the news.
+  - I had spent all of last night instructing the new maid how to best fold my sheets,
+    so I was very tired.
+  - Emma is a hard worker, but she must be taught, you see.
+  - A good head on her shoulders.
+  - Working hands.
+  - And yet... So soft. Those hands.
+  - Like her lips.
+  - The closest God ever got to creating flowers in human form.
+  - ...
+  - I am very tired, detective, I will need to go home soon.
+  unlockableDialogue:
+  - Hm?
+  - Oh, that tired old thing.
+  - Yes, yes, Thorton had life insurance. Who doesn't?
+  - I'm sure the numbers in my account changing will be very exciting for the bank.
+  - 'I''m not likely to notice. '
+  - Detective, despite what people say, there is very little difference between being
+    rich and being richer.
+  - At some point it all becomes the same.
+  - Thorton chased money as if every dime was a year added to his life.
+  - I never saw the point of it.
+  - There are real things in this world, detective.
+  - Beautiful things.
+  - Things that cost nothing.
+  - ...
+  - I really must be getting home soon.
   dialogueUnlocked: 0
   unlockableButton: {fileID: 1844161485}
-  unlockedQuestion: 
-  secretPassphrase: 
+  unlockedQuestion: The inheritance?
+  secretPassphrase: Hoo, as they say, ray.
   backgroundMusicSource: {fileID: 893155251}
 --- !u!114 &1290216130
 MonoBehaviour:
@@ -4040,18 +4075,44 @@ MonoBehaviour:
   means: 'None so far... '
   opportunity: 'None so far... '
   suspectIntroText:
-  - Greetings and salutations
+  - Greetings and salutations, good sir!
   whoAreYou:
-  - the esteemed wizardbro of hightower
+  - Had you asked me five years ago, I would have been a professor!
+  - Ah yes. The days of academia.
+  - But alas, I felt the skies call.
+  - Now astromony is my field of study!
+  - The stars! The planets! Oh, the magical dance of the heavens!
+  - Oh, my name?
+  - Robertius Shacklethorn Mongomery Junior The Fourth.
+  - But my students always called me Mr Wizard.
+  - Wonder why.
   howDoYouKnowVic:
-  - I've never seen the haberdasher before
+  - Why, I've never seen the haberdasher before in my life!
+  - A wealthy man is just as much a mystery as the stars, if you ask me.
+  - How one could earn all that money so callously...
+  - They have to understand there is no wealth without poverty.
+  - How cruel capitalism is.
   whereWereYou:
-  - Why, I was in the observatorium observing the toriums
-  unlockableDialogue: []
+  - Why, I was in the observatorium observing the toriums!
+  - The big telescope stays fixed upwards.
+  - But I have a myriad of smaller ones, for looking around.
+  - This morning I happened to be studying the beautiful Ms Shore row in for...
+  - I mean...
+  - The RESPECTABLE Ms Shore. Row in for supplies. She does this every two weeks.
+  - And I saw all the commotion of the police!
+  - So I knew I had to get to shore and ask what was going on.
+  unlockableDialogue:
+  - 'Well, yes. '
+  - They were crawling all over the beach like ants.
+  - Oh, you're saying Ms Shore was not in her boat when the cops were there?
+  - Because she's the one who called them?
+  - So I could not have observed her rowing AND the cops at the same time?
+  - Well, my good sir, that is what we in academia call...
+  - A you problem.
   dialogueUnlocked: 0
   unlockableButton: {fileID: 1844161485}
-  unlockedQuestion: 
-  secretPassphrase: 
+  unlockedQuestion: You saw the cops?
+  secretPassphrase: So I knew I had to get to shore and ask what was going on.
   backgroundMusicSource: {fileID: 893155251}
 --- !u!114 &1290216131
 MonoBehaviour:

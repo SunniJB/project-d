@@ -60,6 +60,16 @@ public class Dialogue : MonoBehaviour
                     GameManager.Instance.shore.dialogueUnlocked = true;
                     GameManager.Instance.shore.UnlockDialogue();
                 }
+                if (GameManager.Instance.activeSupect == 1)
+                {
+                    GameManager.Instance.wizard.dialogueUnlocked = true;
+                    GameManager.Instance.wizard.UnlockDialogue();
+                }
+                if (GameManager.Instance.activeSupect == 2)
+                {
+                    GameManager.Instance.throckmorton.dialogueUnlocked = true;
+                    GameManager.Instance.throckmorton.UnlockDialogue();
+                }
             }
             choicesPanel.SetActive(true);
         }
