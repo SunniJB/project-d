@@ -5,13 +5,15 @@ using System.Diagnostics;
 
 public class InfoPieces : MonoBehaviour
 {
-    private Vector3 worldPosition, startPosition, endPosition;
+    private Vector3 worldPosition, startPosition;
     public bool touchedABox;
     public GameObject currentBox;
+    public string infoText;
 
     private void Start()
     {
         startPosition = transform.position;
+        gameObject.GetComponentInChildren<TextMeshProUGUI>().text = infoText;
     }
     void Update()
     {
@@ -32,43 +34,36 @@ public class InfoPieces : MonoBehaviour
     public void OnDrag()
     {
         transform.position = worldPosition;
-        UnityEngine.Debug.Log("Dragging should occur");
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        UnityEngine.Debug.Log("Entered a collider");
         if (other.gameObject.CompareTag("box"))
         {
-            UnityEngine.Debug.Log("Entered the box's collider");
             currentBox = other.gameObject;
             touchedABox = true;
-            endPosition = other.gameObject.transform.position;
-            other.gameObject.GetComponent<Image>().enabled = false;
             other.gameObject.GetComponentInChildren<TextMeshProUGUI>().text = "";
         }
     }
 
     private void OnTriggerExit(Collider other)
     {
-        UnityEngine.Debug.Log("Left a collider");
         if (other.gameObject.CompareTag("box"))
         {
-            UnityEngine.Debug.Log("Left the box's collider");
             touchedABox = false;
             currentBox = null;
-            other.gameObject.GetComponent<Image>().enabled = true;
             other.gameObject.GetComponentInChildren<TextMeshProUGUI>().text = "Drag information here";
         }
     }
 
     public void EndDrag()
     {
-        UnityEngine.Debug.Log("End Drag fired");
         if (touchedABox)
         {
-            UnityEngine.Debug.Log("Ended drag, touched a box");
-            transform.position = endPosition;
+            gameObject.GetComponent<Collider>().enabled = false;
+            currentBox.GetComponentInChildren<TextMeshProUGUI>().text = infoText;
+            transform.position = startPosition;
+            gameObject.GetComponent<Collider>().enabled = true;
         } else
         {
             UnityEngine.Debug.Log("Ended drag, didn't touch a box");
