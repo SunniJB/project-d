@@ -215,6 +215,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   thisImage: {fileID: 0}
   touchedABox: 0
+  currentBox: {fileID: 0}
 --- !u!1 &44852811
 GameObject:
   m_ObjectHideFlags: 0
@@ -1950,7 +1951,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!224 &457983070
 RectTransform:
@@ -2029,11 +2030,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameManager: {fileID: 194058021}
-  infoPieces:
-  - {fileID: 2035534168}
-  - {fileID: 1206634462}
-  - {fileID: 1326732178}
-  - {fileID: 26054532}
 --- !u!1 &474807511
 GameObject:
   m_ObjectHideFlags: 0
@@ -2121,7 +2117,7 @@ GameObject:
   - component: {fileID: 491692615}
   - component: {fileID: 491692617}
   - component: {fileID: 491692616}
-  m_Layer: 5
+  m_Layer: 2
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4432,6 +4428,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   thisImage: {fileID: 0}
   touchedABox: 0
+  currentBox: {fileID: 0}
 --- !u!1 &1285249949
 GameObject:
   m_ObjectHideFlags: 0
@@ -4985,6 +4982,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   thisImage: {fileID: 0}
   touchedABox: 0
+  currentBox: {fileID: 0}
 --- !u!1 &1366015365
 GameObject:
   m_ObjectHideFlags: 0
@@ -4997,8 +4995,8 @@ GameObject:
   - component: {fileID: 1366015369}
   - component: {fileID: 1366015368}
   - component: {fileID: 1366015371}
-  - component: {fileID: 1366015370}
-  m_Layer: 5
+  - component: {fileID: 1366015372}
+  m_Layer: 2
   m_Name: Means
   m_TagString: box
   m_Icon: {fileID: 0}
@@ -5040,7 +5038,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -5064,7 +5062,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1366015365}
   m_CullTransparentMesh: 1
---- !u!54 &1366015370
+--- !u!65 &1366015371
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1366015365}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 510.3056, y: 102.73059, z: 1}
+  m_Center: {x: 0.8365402, y: -0.3649392, z: 0}
+--- !u!54 &1366015372
 Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -5080,19 +5091,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!65 &1366015371
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1366015365}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 510.3056, y: 102.73059, z: 1}
-  m_Center: {x: 0.8365402, y: -0.3649392, z: 0}
 --- !u!1 &1443478458
 GameObject:
   m_ObjectHideFlags: 0
@@ -7541,6 +7539,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   thisImage: {fileID: 2035534170}
   touchedABox: 0
+  currentBox: {fileID: 0}
 --- !u!114 &2035534173
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7577,6 +7576,22 @@ MonoBehaviour:
         - m_Target: {fileID: 2035534172}
           m_TargetAssemblyTypeName: InfoPieces, Assembly-CSharp
           m_MethodName: EndDrag
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 13
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 2035534172}
+          m_TargetAssemblyTypeName: InfoPieces, Assembly-CSharp
+          m_MethodName: OnDrag
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
