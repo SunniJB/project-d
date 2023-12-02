@@ -9,7 +9,6 @@ public class Dialogue : MonoBehaviour
 
     public TextMeshProUGUI textComponent;
     public string[] lines;
-    [SerializeField] char[] forbiddenCharacters = { '<', '>', '/' };
     public float textSpeed;
 
     private int index;

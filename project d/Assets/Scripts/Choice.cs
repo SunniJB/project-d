@@ -5,6 +5,7 @@ using UnityEngine.UI;
 public class Choice : MonoBehaviour
 {
     public bool unavailable;
+    public int buttonNumber;
 
     private void Start()
     {

@@ -15,9 +15,6 @@ public class Suspect : MonoBehaviour
     {
         backgroundMusicSource.pitch = 1.0f;
 
-        GameManager.Instance.motiveText.text = motive;
-        GameManager.Instance.meansText.text = means;
-        GameManager.Instance.opportunityText.text = opportunity;
         GameManager.Instance.dialogue.passphrase = secretPassphrase;
 
         if (dialogueUnlocked)

@@ -11,9 +11,9 @@ public class GameManager : MonoBehaviour
 
     public int activeSupect; //0 is shore, 1 is wizard, 2 is throckmorton
     [SerializeField] private Sprite[] portraits;
-    [SerializeField] private GameObject mainPortrait, notepadPortrait;
+    [SerializeField] private GameObject mainPortrait;
 
-    public TextMeshProUGUI motiveText, meansText, opportunityText, nameText;
+    public TextMeshProUGUI nameText, notebookName;
 
     public static GameManager Instance;
     public Suspect shore, wizard, throckmorton;
@@ -26,8 +26,7 @@ public class GameManager : MonoBehaviour
     }
     private void Start()
     {
-        motiveText.text = meansText.text = opportunityText.text = "";
-
+        notebookName.text = "Ms. Shore";
         dialogue.lines = shore.suspectIntroText;
         dialogue.passphrase = shore.secretPassphrase;
     }
@@ -78,7 +77,7 @@ public class GameManager : MonoBehaviour
     public void ChangePortrait()
     {
         mainPortrait.GetComponent<SpriteRenderer>().sprite = portraits[activeSupect]; 
-        notepadPortrait.GetComponent<Image>().sprite = portraits[activeSupect];
+        notebookName.text = nameText.text;
     }
 
     public void WhoAreYou()
