@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -6,12 +7,12 @@ using UnityEngine.Video;
 public class StartMenu : MonoBehaviour
 {
     [SerializeField] Slider volumeSlider;
-    [SerializeField] VideoPlayer player;
+    [SerializeField] VidPlayer player;
+    [SerializeField] GameObject startPanel, skipButton;
 
     private void Start()
     {
-        gameObject.GetComponent<Animator>().enabled = false;
-        player.Prepare();
+
     }
     public void ChangeVolume()
     {
@@ -20,11 +21,17 @@ public class StartMenu : MonoBehaviour
 
     public void PlayCutscene()
     {
-        gameObject.GetComponent<Animator>().enabled = true;
+        startPanel.SetActive(false);
+        gameObject.GetComponent<AudioSource>().enabled = false;
+        skipButton.SetActive(true);
+        player.PlayVideo();
+        StartCoroutine(WaitForVideoEnd());
     }
-    public void PlayVideo()
+
+    IEnumerator WaitForVideoEnd()
     {
-        player.Play();
+        yield return new WaitForSeconds(40);
+        StartGame();
     }
 
     public void StartGame()
