@@ -7,8 +7,10 @@ public class InfoPieces : MonoBehaviour
 {
     private Vector3 worldPosition, startPosition;
     public bool touchedABox;
-    public GameObject currentBox;
+    public GameObject currentBox, correctBox;
     public string infoText;
+
+    public bool isInTheRightPlace;
 
     private void Start()
     {
@@ -52,6 +54,7 @@ public class InfoPieces : MonoBehaviour
         {
             touchedABox = false;
             currentBox = null;
+            isInTheRightPlace = false;
             other.gameObject.GetComponentInChildren<TextMeshProUGUI>().text = "Drag information here";
         }
     }
@@ -62,6 +65,10 @@ public class InfoPieces : MonoBehaviour
         {
             gameObject.GetComponent<Collider>().enabled = false;
             currentBox.GetComponentInChildren<TextMeshProUGUI>().text = infoText;
+            if (currentBox == correctBox)
+            {
+                isInTheRightPlace = true;
+            }
             transform.position = startPosition;
             gameObject.GetComponent<Collider>().enabled = true;
         } else

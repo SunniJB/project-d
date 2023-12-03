@@ -4,8 +4,9 @@ using UnityEngine.UI;
 
 public class Choice : MonoBehaviour
 {
-    public bool unavailable;
+    public bool unavailable, hasBeenRevealed;
     public int buttonNumber;
+    [SerializeField] Notebook[] notebooks;
 
     private void Start()
     {
@@ -13,6 +14,12 @@ public class Choice : MonoBehaviour
         {
             Unavailable();
         }
+    }
+
+    public void OnClick()
+    {
+        hasBeenRevealed = true;
+        notebooks[GameManager.Instance.activeSupect].RevealInformation(buttonNumber);
     }
 
     public void Unavailable()

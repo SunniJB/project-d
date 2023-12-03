@@ -42,7 +42,7 @@ public class SoundManager : MonoBehaviour
 
     public void TypingSound()
     {
-        typingSound.pitch = Random.Range(1f, 3f);
+        typingSound.pitch = Random.Range(1f, 2f);
         typingSound.volume = Random.Range(0.5f, 1f);
         typingSound.Play();
     }

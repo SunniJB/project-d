@@ -3,7 +3,6 @@ using UnityEngine;
 
 public class Suspect : MonoBehaviour
 {
-    public string motive, means, opportunity;
     public string[] suspectIntroText, whoAreYou, howDoYouKnowVic, whereWereYou, unlockableDialogue;
     public bool dialogueUnlocked;
 

@@ -13,11 +13,16 @@ public class GameManager : MonoBehaviour
     [SerializeField] private Sprite[] portraits;
     [SerializeField] private GameObject mainPortrait;
 
-    public TextMeshProUGUI nameText, notebookName;
+    public TextMeshProUGUI nameText, notebookName, accusationName;
 
     public static GameManager Instance;
     public Suspect shore, wizard, throckmorton;
     public Dialogue dialogue;
+
+    public GameObject generalNotebook;
+
+    public Boxes[] wizardBoxes;
+    public bool winConditionFulfilled;
 
 
     private void Awake()
@@ -33,11 +38,20 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
+        if (generalNotebook.activeInHierarchy)
+        {
+            Time.timeScale = 0f;
+        } else if (generalNotebook.activeInHierarchy == false)
+        {
+            Time.timeScale = 1f;
+        }
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             gameIsPaused = !gameIsPaused;
             PauseGame();
         }
+
+        accusationName.text = nameText.text + "?";
     }
     public void PauseGame()
     {
@@ -159,5 +173,40 @@ public class GameManager : MonoBehaviour
                 break;
         }
         dialogue.StartDialogue();
+    }
+
+    public void CheckIfWon()
+    {
+        int correctBoxes = 0;
+
+        if (activeSupect == 1)
+        {
+            foreach (var box in wizardBoxes)
+            {
+                if (box.GetComponent<Boxes>().hasTheRightInfo)
+                {
+                    correctBoxes += 1;
+                }
+            }
+            if (correctBoxes == 3)
+            {
+                Win();
+            } else
+            {
+                Lose();
+            }
+        } else
+        {
+            Lose();
+        }
+    }
+
+    public void Win()
+    {
+        Debug.Log("Player won!");
+    }
+    public void Lose()
+    {
+        Debug.Log("Player lost!");
     }
 }
