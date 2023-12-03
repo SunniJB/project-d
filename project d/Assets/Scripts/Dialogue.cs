@@ -24,6 +24,17 @@ public class Dialogue : MonoBehaviour
         choicesPanel.SetActive(false);
     }
 
+    private void Update()
+    {
+        if (choicesPanel.activeInHierarchy == false)
+        {
+            if (Input.GetKeyUp(KeyCode.Space))
+            {
+                ContinueDialogue();
+            }
+        }
+    }
+
     public void StartDialogue()
     {
         textComponent.text = string.Empty;
