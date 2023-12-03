@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
@@ -22,7 +23,9 @@ public class GameManager : MonoBehaviour
     public GameObject generalNotebook;
 
     public Boxes[] wizardBoxes;
-    public bool winConditionFulfilled;
+    public bool fadeOutMusic;
+    [SerializeField] private AudioSource backgroundMusicSource;
+    public GameObject winPanel, losePanel;
 
 
     private void Awake()
@@ -52,6 +55,18 @@ public class GameManager : MonoBehaviour
         }
 
         accusationName.text = nameText.text + "?";
+
+        if (fadeOutMusic)
+        {
+            if (backgroundMusicSource.volume > 0)
+            {
+                backgroundMusicSource.volume -= Time.deltaTime * 1 / 3f;
+            }
+            if (backgroundMusicSource.volume <= 0)
+            {
+                fadeOutMusic = false;
+            }
+        }
     }
     public void PauseGame()
     {
@@ -178,6 +193,7 @@ public class GameManager : MonoBehaviour
     public void CheckIfWon()
     {
         int correctBoxes = 0;
+        fadeOutMusic = true;
 
         if (activeSupect == 1)
         {
@@ -204,9 +220,18 @@ public class GameManager : MonoBehaviour
     public void Win()
     {
         Debug.Log("Player won!");
+        SoundManager.Instance.PlaySound("Success");
+        winPanel.SetActive(true);
     }
     public void Lose()
     {
+        SoundManager.Instance.PlaySound("Error");
         Debug.Log("Player lost!");
+        losePanel.SetActive(true);
+    }
+
+    public void MainMenu()
+    {
+        SceneManager.LoadScene(0);
     }
 }
